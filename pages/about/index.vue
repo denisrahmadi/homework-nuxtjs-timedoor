@@ -1,7 +1,7 @@
 <template>
     <div >
         <div class="flex bg-black text-white font-bold w-96 mx-auto mt-72 p-1 rounded">
-            <h1 class="mx-auto my-2">Ini adalah halaman About yang belom jadi</h1>
+            <h1 class="mx-auto my-2">halaman About page belom jadi</h1>
         </div>
     </div>
 </template>

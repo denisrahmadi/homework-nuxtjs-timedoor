@@ -41,10 +41,14 @@
 </template>
 <script>
 export default {
-  props: ["classData"],
   data() {
     return {};
   },
+  computed: {
+    classData(){
+      return this.$store.getters.getClassData
+    }
+  }
 };
 </script>
 <style></style>
