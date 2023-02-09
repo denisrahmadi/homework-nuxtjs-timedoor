@@ -51,11 +51,20 @@
                     About
                   </nuxt-link>
                 </li>
+
+                <li>
+                  <nuxt-link
+                    class="text-slate-900 font-bold text-lg transition hover:text-emerald-500/75"
+                    to="/profile"
+                  >
+                    My Profile
+                  </nuxt-link>
+                </li>
               </ul>
             </nav>
           </div>
 
-          <!-- <div class="flex items-center gap-4">
+          <div class="flex items-center gap-4">
             <div class="sm:flex sm:gap-4">
               <a
                 class="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
@@ -94,7 +103,7 @@
                 </svg>
               </button>
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
     </header>
