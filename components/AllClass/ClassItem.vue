@@ -6,7 +6,7 @@
         :key="index"
         class="relative inline gap-3 rounded-xl border border-gray-100 p-8 shadow-xl"
         tag="a"
-        to="#"
+        :to="{name: 'kelas-detail', params:{ detail:classItem.id }}"
       >
         <span
           class="relative right-4 top-4 rounded-full bg-green-100 px-3 py-1.5 text-xs font-medium text-green-600"

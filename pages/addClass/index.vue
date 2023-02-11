@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 ">
+    <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-lg text-center">
         <h1 class="text-2xl font-bold sm:text-3xl">Add Class</h1>
       </div>
@@ -58,6 +58,7 @@
   </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
@@ -72,11 +73,22 @@ export default {
     };
   },
   methods: {
-    addNewClassItem(){
-        let newId = this.$store.getters.lastIdClassItem + 1
-        this.$store.commit('addClassItem', {id: newId, ...this.newClassItem})
-        this.$router.push("/kelas")
-    }
+    addNewClassItem() {
+      this.$store.dispatch('addClassData', this.newClassItem)
+      .then(() => {
+        this.$router.push('/kelas')
+      })
+    },
+    // addNewClassItem() {
+    //   axios
+    //     .post(
+    //       "https://recall-nuxtjs-theory-default-rtdb.asia-southeast1.firebasedatabase.app/classData.json",
+    //       this.newClassItem
+    //     )
+    //     .then(() => {
+    //       this.$router.push("/kelas");
+    //     });
+    // },
   },
 };
 </script>

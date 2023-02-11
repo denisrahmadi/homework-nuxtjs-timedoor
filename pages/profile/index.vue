@@ -1,6 +1,8 @@
 <template>
-    <div>
-        <h1 class="w-1/2 mt-10">Ini adalah halaman</h1>
+    <div >
+        <div class="flex bg-black text-white font-bold w-96 mx-auto mt-72 p-1 rounded">
+            <h1 class="mx-auto my-2">halaman Profile page belom jadi</h1>
+        </div>
     </div>
 </template>
 <script>
