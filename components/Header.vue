@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header aria-label="Site Header" class="bg-white shadow-lg">
+    <header aria-label="Site Header" class="bg-white shadow">
       <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
           <div class="md:flex md:items-center md:gap-12">
@@ -68,21 +68,33 @@
 
           <div class="flex items-center gap-4">
             <div class="sm:flex sm:gap-4">
-              <a
+              <nuxt-link
                 class="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow hover:text-teal-600 hover:bg-white"
-                href="#"
+                to="/user/signin"
+                v-if="!$store.getters.isAuth"
               >
-                Login
-              </a>
+                Sign In
+              </nuxt-link>
 
-              <div class="hidden sm:flex">
-                <a
-                  class="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 hover:text-gray-100 hover:bg-teal-600"
-                  href="#"
-                >
-                  Register
-                </a>
-              </div>
+            <div class="hidden sm:flex">
+              <nuxt-link
+                tag="p"
+                to="/profile"
+                class="rounded-md px-5 py-2.5 text-sm font-medium text-black cursor-pointer"
+                v-if="$store.getters.isAuth"
+              >
+                {{ $store.state.userData.userName }}
+              </nuxt-link>
+            </div>
+            <div class="hidden sm:flex">
+              <a
+                class="rounded-md bg-red-400 px-5 py-2.5 text-sm font-medium text-white hover:text-white hover:bg-red-600 cursor-pointer"
+                v-if="$store.getters.isAuth"
+                @click="signOut"
+              >
+                Sign Out
+              </a>
+            </div>
             </div>
 
             <div class="block md:hidden">
@@ -112,6 +124,13 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  methods: {
+    signOut(){
+      this.$store.commit('setToken', null)
+      this.$router.push('/')
+    }
+  },
+};
 </script>
 <style></style>

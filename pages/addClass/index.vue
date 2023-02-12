@@ -60,6 +60,7 @@
 <script>
 import axios from "axios";
 export default {
+  middleware: 'auth',
   data() {
     return {
       newClassItem: {

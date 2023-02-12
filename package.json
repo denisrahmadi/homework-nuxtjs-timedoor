@@ -9,6 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.5.3",
     "axios": "0.21.1",
     "core-js": "^3.25.3",
     "lite-youtube-embed": "^0.2.0",
